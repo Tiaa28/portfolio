@@ -11,6 +11,11 @@
   -o-transition: all .3s ease-in-out;
 }
 
+::selection {
+  background: #EAF5EB30;
+  color: #fff;
+}
+
 .hamburger {
   display: block;
   height: 2px;
@@ -75,6 +80,17 @@ header .container {
   border-bottom: 1px solid #72819639;
 }
 
+header.active {
+  position: fixed;
+  background: #23232350;
+  backdrop-filter: blur(10px);
+}
+
+header.active .container {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
@@ -86,7 +102,7 @@ header .container {
     right: 0;
     top: 72px;
     gap: 0 !important;
-    background: transparent;
+    background: #23232350;
     backdrop-filter: blur(10px);
     transform: scaleY(0);
     -webkit-transform: scaleY(0);
