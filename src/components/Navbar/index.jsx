@@ -29,8 +29,7 @@ const Navbar = ({ font }) => {
   useEffect(() => {
     document.addEventListener("click", (e) => {
       if (
-        !hamburger.current.contains(e.target) &&
-        !navLink.current.contains(e.target)
+        !hamburger.current.contains(e.target)
       ) {
         hamburger.current.classList.remove("active");
         navLink.current.classList.remove("active");
