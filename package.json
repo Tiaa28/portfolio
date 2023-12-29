@@ -9,9 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tsparticles/engine": "^3.0.3",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.0.3",
+    "gsap": "^3.12.4",
     "next": "14.0.4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "split-type": "^0.3.4"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",

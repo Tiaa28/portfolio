@@ -3,11 +3,13 @@ import logo from "@/app/icon.png";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useEffect } from "react";
+import NavLink from "./NavLink";
 
 const Navbar = ({ font }) => {
   const hamburger = useRef(null);
   const navLink = useRef(null);
-  const navbar = useRef(null)
+  const navbar = useRef(null);
+  const wrapper = useRef(null);
 
   const handleClick = () => {
     hamburger.current.classList.toggle("active");
@@ -15,14 +17,14 @@ const Navbar = ({ font }) => {
   };
 
   const scrolling = () => {
-    const scroll = window.scrollY
-    
+    const scroll = window.scrollY;
+
     if (scroll > 0) {
-      navbar.current.classList.add('active')
+      navbar.current.classList.add("active");
     } else {
-      navbar.current.classList.remove('active')
+      navbar.current.classList.remove("active");
     }
-  }
+  };
 
   useEffect(() => {
     document.addEventListener("click", (e) => {
@@ -37,60 +39,58 @@ const Navbar = ({ font }) => {
   }, []);
 
   useEffect(() => {
-    window.addEventListener('scroll', scrolling);
-  }, [])
+    window.addEventListener("scroll", scrolling);
+  }, []);
 
   return (
-    <header className={`${font.className} absolute top-0 w-full`} ref={navbar}>
-      <div className="container mx-auto py-4 md:px-0 px-4 flex justify-between items-center">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="w-10 h-10">
-            <Image src={logo} alt="logo" className="w-full h-full" />
-          </div>
-          <h1 className="text-color-white font-bold text-xl capitalize">
-            tia niandari
-          </h1>
-        </Link>
-        <nav
-          className="flex items-center gap-3 md:mx-0 mx-auto md:px-0 px-4 py-4 md:py-0"
-          ref={navLink}
-        >
-          <Link
-            href="#"
-            className="text-color-grey font-medium hover:text-color-green"
-          >
-            Home
+    <>
+      <header
+        className={`${font.className} fixed top-0 w-full z-20`}
+        ref={navbar}
+      >
+        <div className="container mx-auto py-4 md:px-0 px-4 flex justify-between items-center" ref={wrapper}>
+          <Link href="/" className="flex items-center gap-2">
+            <div className="w-10 h-10">
+              <Image src={logo} alt="logo" className="w-full h-full" />
+            </div>
+            <h1 className="text-color-white font-bold text-xl capitalize">
+              tia <span className="text-color-green">niandari</span>
+            </h1>
           </Link>
-          <Link
-            href="#"
-            className="text-color-grey font-medium hover:text-color-green"
+          <nav className="md:flex hidden items-center gap-3">
+            <Link
+              href="/"
+              className="text-color-grey font-medium hover:text-color-green"
+            >
+              Home
+            </Link>
+            <Link
+              href="/projects"
+              className="text-color-grey font-medium hover:text-color-green"
+            >
+              Projects
+            </Link>
+            <Link
+              href="/contact"
+              className="text-color-grey font-medium hover:text-color-green"
+            >
+              Contact
+            </Link>
+          </nav>
+          <button
+            className="md:hidden block w-10 h-5 relative"
+            ref={hamburger}
+            name="hamburger"
+            onClick={handleClick}
           >
-            About
-          </Link>
-          <Link
-            href="#"
-            className="text-color-grey font-medium hover:text-color-green"
-          >
-            Projects
-          </Link>
-          <Link
-            href="#"
-            className="text-color-grey font-medium hover:text-color-green"
-          >
-            Contact
-          </Link>
-        </nav>
-        <button
-          className="md:hidden block w-10 h-5 relative"
-          ref={hamburger}
-          onClick={handleClick}
-        >
-          <span className="hamburger"></span>
-          <span className="hamburger"></span>
-          <span className="hamburger"></span>
-        </button>
-      </div>
-    </header>
+            <span className="hamburger"></span>
+            <span className="hamburger"></span>
+            <span className="hamburger"></span>
+          </button>
+        </div>
+      </header>
+      <NavLink nav={navLink} />
+    </>
   );
 };
 
