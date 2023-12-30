@@ -13,6 +13,11 @@ export default function Home() {
   useEffect(() => {
     const textSplitting = new SplitType(title.current);
 
+    gsap.to(title.current, {
+      opacity: 1,
+      duration: 0.2,
+    });
+
     gsap.to(textSplitting.chars, {
       y: 0,
       opacity: 1,
@@ -43,7 +48,7 @@ export default function Home() {
                 Hello, my name is
               </p>
               <h1
-                className="font-bold text-color-white md:text-5xl text-3xl overflow-hidden"
+                className="font-bold text-color-white md:text-5xl text-3xl overflow-hidden opacity-0"
                 ref={title}
               >
                 Tia Niandari

@@ -25,6 +25,7 @@ module.exports = {
         "black-light": "#393939",
         grey: "#999",
         "green-light": "#EAF5EB",
+        "hover-bg-nav": "#72819609", 
       },
     },
   },
