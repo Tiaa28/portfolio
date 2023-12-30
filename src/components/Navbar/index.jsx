@@ -82,7 +82,7 @@ const Navbar = ({ font }) => {
         ref={navbar}
       >
         <div
-          className="container mx-auto py-4 md:px-0 px-4 flex justify-between items-center"
+          className="container mx-auto py-4 xl:px-0 px-4 flex justify-between items-center"
           ref={wrapper}
         >
           <Link href="/" className="flex items-center gap-2">
