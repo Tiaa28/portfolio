@@ -1,18 +1,24 @@
 "use client";
 import { projects } from "@/libs/projects";
-import WOWInit from "@/libs/wow";
 import Image from "next/image";
+import { useEffect } from "react";
 import { FiExternalLink } from "react-icons/fi";
+import WOW from "wowjs";
 
 const Page = () => {
   const data = projects;
+
+  useEffect(() => {
+    new WOW.WOW({
+     live: true,
+    }).init();
+   }, []);
   
   return (
     <section className="min-h-screen overflow-hidden h-full w-full">
       <div className="text-center pt-24 pb-3">
         <h1 className="text-color-white font-bold text-3xl">PROJECTS</h1>
       </div>
-      <WOWInit />
       <div className="flex justify-center items-end h-[70vh] overflow-hidden">
         <div className="container mx-auto md:px-0 px-4 py-3 h-full overflow-y-auto">
           <div className="grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 px-3">

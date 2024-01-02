@@ -1,5 +1,6 @@
 "use client";
-import WOWInit from "@/libs/wow";
+import WOW from "wowjs";
+import { useEffect } from "react";
 import {
   PiPaperPlaneRightDuotone,
   PiInstagramLogoDuotone,
@@ -8,24 +9,38 @@ import {
 } from "react-icons/pi";
 
 const Page = () => {
+  useEffect(() => {
+    new WOW.WOW({
+      live: true,
+    }).init();
+  }, []);
+
   return (
     <section
       className="min-h-screen overflow-hidden h-full w-full flex items-center justify-center"
       id="contact"
     >
-      <WOWInit />
       <div className="container mx-auto pt-4 md:px-0 px-4">
         <div className="flex justify-center items-start gap-10 h-[70vh]">
           <div className="w-full">
-            <h2 className="text-color-white font-bold capitalize mb-1 text-2xl wow fadeInUp" data-wow-delay="0.2s">
+            <h2
+              className="text-color-white font-bold capitalize mb-1 text-2xl wow fadeInUp"
+              data-wow-delay="0.2s"
+            >
               Get in touch
             </h2>
-            <p className="mb-4 text-color-grey wow fadeInUp" data-wow-delay="0.2s">
+            <p
+              className="mb-4 text-color-grey wow fadeInUp"
+              data-wow-delay="0.2s"
+            >
               I'm interested in freelance. However, if you have other request or
               question, don't hesitate to use the form.
             </p>
             <div className="flex md:flex-row flex-col md:gap-3 gap-5">
-              <form className="basis-[80%] flex flex-col gap-3 justif-center items-center w-full wow fadeInUp" data-wow-delay="0.4s">
+              <form
+                className="basis-[80%] flex flex-col gap-3 justif-center items-center w-full wow fadeInUp"
+                data-wow-delay="0.4s"
+              >
                 <input
                   type="text"
                   name="name"

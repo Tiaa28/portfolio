@@ -1,12 +1,12 @@
 "use client";
 import tiaa from "@/assets/tiaa.png";
 import ParticlesJS from "@/components/Particles";
-import WOWInit from "@/libs/wow";
 import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import SplitType from "split-type";
+import WOW from "wowjs";
 
 export default function Home() {
   const title = useRef(null);
@@ -28,10 +28,15 @@ export default function Home() {
     });
   }, []);
 
+  useEffect(() => {
+    new WOW.WOW({
+     live: true,
+    }).init();
+   }, []);
+
   return (
     <section className="lg:h-screen h-auto lg:pt-0 pt-24 relative overflow-hidden">
       <ParticlesJS />
-      <WOWInit />
       <div className="container mx-auto pt-4 md:px-0 px-4 h-full relative z-[1]">
         <div className="flex flex-col-reverse lg:flex-row justify-center items-center h-full">
           <div className="w-full h-full md:basis-1/2 basis-full flex justify-center items-end">
