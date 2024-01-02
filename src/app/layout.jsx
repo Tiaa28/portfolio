@@ -1,5 +1,6 @@
 import { Quicksand } from "next/font/google";
 import "./globals.css";
+import "wowjs/css/libs/animate.css";
 import Navbar from "@/components/Navbar";
 
 const quicksand = Quicksand({ weight: ['300', '400', '500', '600', '700'], subsets: ["latin"] });

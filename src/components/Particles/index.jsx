@@ -1,5 +1,4 @@
 "use client";
-// import configParticle from "@/libs/configParticles.json";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import { useEffect, useMemo, useState } from "react";

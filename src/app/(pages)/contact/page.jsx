@@ -1,9 +1,10 @@
+"use client";
+import WOWInit from "@/libs/wow";
 import {
   PiPaperPlaneRightDuotone,
   PiInstagramLogoDuotone,
   PiLinkedinLogoDuotone,
   PiGithubLogoDuotone,
-  PiMapPinDuotone,
 } from "react-icons/pi";
 
 const Page = () => {
@@ -12,18 +13,19 @@ const Page = () => {
       className="min-h-screen overflow-hidden h-full w-full flex items-center justify-center"
       id="contact"
     >
+      <WOWInit />
       <div className="container mx-auto pt-4 md:px-0 px-4">
         <div className="flex justify-center items-start gap-10 h-[70vh]">
           <div className="w-full">
-            <h2 className="text-color-white font-bold capitalize mb-1 text-2xl">
+            <h2 className="text-color-white font-bold capitalize mb-1 text-2xl wow fadeInUp" data-wow-delay="0.2s">
               Get in touch
             </h2>
-            <p className="mb-4 text-color-grey">
+            <p className="mb-4 text-color-grey wow fadeInUp" data-wow-delay="0.2s">
               I'm interested in freelance. However, if you have other request or
               question, don't hesitate to use the form.
             </p>
             <div className="flex md:flex-row flex-col md:gap-3 gap-5">
-              <form className="basis-[80%] flex flex-col gap-3 justif-center items-center w-full">
+              <form className="basis-[80%] flex flex-col gap-3 justif-center items-center w-full wow fadeInUp" data-wow-delay="0.4s">
                 <input
                   type="text"
                   name="name"
@@ -55,21 +57,24 @@ const Page = () => {
                 <a
                   href="https://www.instagram.com/tynndr_"
                   target="_blank"
-                  className="px-5 py-4 h-full overflow-hidden rounded-md border bg-color-hover-bg-nav hover:bg-color-card-bg hover:border-color-green border-color-grey w-full flex justify-center items-center"
+                  className="px-5 py-4 h-full overflow-hidden rounded-md border bg-color-hover-bg-nav hover:bg-color-card-bg hover:border-color-green border-color-grey w-full flex justify-center items-center wow bounceInRight"
+                  data-wow-delay="0.3s"
                 >
                   <PiInstagramLogoDuotone />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/tianiandari/"
                   target="_blank"
-                  className="px-5 py-4 h-full overflow-hidden rounded-md border bg-color-hover-bg-nav hover:bg-color-card-bg hover:border-color-green border-color-grey w-full flex justify-center items-center"
+                  className="px-5 py-4 h-full overflow-hidden rounded-md border bg-color-hover-bg-nav hover:bg-color-card-bg hover:border-color-green border-color-grey w-full flex justify-center items-center wow bounceInRight"
+                  data-wow-delay="0.5s"
                 >
                   <PiLinkedinLogoDuotone />
                 </a>
                 <a
                   href="https://github.com/tiaa28"
                   target="_blank"
-                  className="px-5 py-4 h-full overflow-hidden rounded-md border bg-color-hover-bg-nav hover:bg-color-card-bg hover:border-color-green border-color-grey w-full flex justify-center items-center"
+                  className="px-5 py-4 h-full overflow-hidden rounded-md border bg-color-hover-bg-nav hover:bg-color-card-bg hover:border-color-green border-color-grey w-full flex justify-center items-center wow bounceInRight"
+                  data-wow-delay="0.7s"
                 >
                   <PiGithubLogoDuotone />
                 </a>

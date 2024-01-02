@@ -1,6 +1,7 @@
 "use client";
 import tiaa from "@/assets/tiaa.png";
 import ParticlesJS from "@/components/Particles";
+import WOWInit from "@/libs/wow";
 import gsap from "gsap";
 import Image from "next/image";
 import Link from "next/link";
@@ -30,6 +31,7 @@ export default function Home() {
   return (
     <section className="lg:h-screen h-auto lg:pt-0 pt-24 relative overflow-hidden">
       <ParticlesJS />
+      <WOWInit />
       <div className="container mx-auto pt-4 md:px-0 px-4 h-full relative z-[1]">
         <div className="flex flex-col-reverse lg:flex-row justify-center items-center h-full">
           <div className="w-full h-full md:basis-1/2 basis-full flex justify-center items-end">
@@ -44,7 +46,7 @@ export default function Home() {
           </div>
           <div className="w-full md:basis-1/2 basis-full">
             <div className="flex flex-col gap-3 items-start justify-center">
-              <p className="font-bold text-color-green text-xl">
+              <p className="font-bold text-color-green text-xl wow fadeInUp" data-wow-delay="0.4s">
                 Hello, my name is
               </p>
               <h1
@@ -53,7 +55,7 @@ export default function Home() {
               >
                 Tia Niandari
               </h1>
-              <p className="text-color-grey">
+              <p className="text-color-grey wow fadeInUp" data-wow-delay="0.4s">
                 I am a fresh graduate who is able to conduct research,
                 communicate and have good public speaking skills. Has a desire
                 to learn and is able to adapt well.

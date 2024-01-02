@@ -116,6 +116,8 @@ const Navbar = ({ font }) => {
           <button
             className="md:hidden block w-10 h-5 relative"
             ref={hamburger}
+            role="button"
+            aria-label="hamburger-menu"
             name="hamburger"
             onClick={handleClick}
           >
