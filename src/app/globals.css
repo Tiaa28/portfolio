@@ -5,12 +5,12 @@
 *,
 *::before,
 *::after {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out !important;
   box-sizing: border-box;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out !important;
+  -moz-transition: all 0.3s ease-in-out !important;
+  -ms-transition: all 0.3s ease-in-out !important;
+  -o-transition: all 0.3s ease-in-out !important;
 }
 
 ::selection {
@@ -139,6 +139,18 @@ header.active .container {
   -ms-transform: translateY(100px);
   -o-transform: translateY(100px);
   opacity: 0;
+}
+
+.information svg,
+#contact a svg {
+  fill: #999 !important;
+  width: 25px;
+  height: auto;
+}
+
+.information:hover svg,
+#contact a:hover svg {
+  fill: #079911 !important;
 }
 
 @media (max-width: 768px) {
