@@ -37,7 +37,7 @@ const Page = () => {
       setLoading(false);
       return toast.update(loadingToast, {
         type: "success",
-        render: sending.message,
+        render: "Successfully sending email",
         isLoading: false,
         autoClose: 4000
       });
