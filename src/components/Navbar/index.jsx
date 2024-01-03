@@ -1,5 +1,5 @@
 "use client";
-import logo from "@/app/icon.png";
+import logo from "@/assets/icon.png";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useEffect, useState } from "react";
