@@ -1,15 +1,21 @@
-import axios from "axios";
+import { NextResponse } from "next/server";
 
 const sendedEmail = async ({ name, email, message }) => {
-  const responses = await axios.post("/api/send-mail", {
-    name, email, message
-  }, {
+  if (!name || !email || !message) {
+    return NextResponse.json({
+      ok: false,
+      message: "Something went wrong!",
+    });
+  }
+  
+  const response = await fetch("/api/send-mail", {
+    method: "POST",
+    body: JSON.stringify({ name, email, message }),
     headers: {
-      Accept: "application/json",
       "Content-Type": "application/json",
-    }
+    },
   });
-  return responses;
-}
+  return response;
+};
 
 export default sendedEmail;

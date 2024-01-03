@@ -28,23 +28,26 @@ const Page = () => {
     const loadingToast = toast.loading("Sending email...");
     setLoading(true);
     const sending = await sendedEmail(data);
+
+    // console.log(sending);
     
-    if (sending.statusText = "OK") {
+
+    if (sending.ok) {
       form.current.reset();
       setLoading(false);
       return toast.update(loadingToast, {
         type: "success",
-        render: sending.data.message,
+        render: sending.message,
         isLoading: false,
-        autoClose: 3000
+        autoClose: 4000
       });
     } else {
       setLoading(false);
       return toast.update(loadingToast, {
         type: "error",
-        render: sending.data.message,
+        render: "Something went wrong!",
         isLoading: false,
-        autoClose: 3000
+        autoClose: 4000
       });
     }
   };
